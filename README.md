@@ -96,20 +96,19 @@ setIsTopOfPage("false")
 
 ---
 
-## not finished
-
----
-
 ```jsx
-// 2. interfaces useState defination
+// 2. interface useState defination
 // types.ts file
 export interface SelectedPage {
   open = boolean,
 }
 
-const [isOpen, isOpen] = useState<SelectedPage>(
+// in component
+const [isOpen, setIsOpen] = useState<SelectedPage>(
    { open: false }
   )
+
+setIsOpen({open: true})
 ```
 
 ---
@@ -119,10 +118,14 @@ const [isOpen, isOpen] = useState<SelectedPage>(
 //types.ts file
 export enum SelectedPage {
   Open = false,
+  Close = true,
   ...
 }
+
+// in component
 const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
+    SelectedPage.Open
   )
 
+setSelectedPage(SelectedPage.Close)
 ```
