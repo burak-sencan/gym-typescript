@@ -56,7 +56,6 @@ const user: User = {
   name: "John",
   salary: 25, // TypeScript warn you.
   email: "john@example.com"
-
 };
 
 // Type '{ name: string; salary: number; email: string; }' is not assignable to type 'User'.
@@ -84,7 +83,7 @@ console.log(add("1", 2)); // TypeScript warn you
 
 # TypeScript in ReactJS
 
-## useState
+## 1. useState
 
 ```Jsx
 // 1. basic useState defination
@@ -128,4 +127,35 @@ const [selectedPage, setSelectedPage] = useState<SelectedPage>(
   )
 
 setSelectedPage(SelectedPage.Close)
+```
+
+---
+
+# TypeScript in ReactJS
+
+## 1. Props
+
+prop type must be defined in child component
+
+```javascript
+//parent component
+ fucntion App {
+  const [open, setIsOpen] = useState<boolean>(false)
+
+  return(
+    <Child open={open} setIsOpen={setIsOpen} />
+    )
+}
+
+//child component
+type MenuState = {
+  open: boolean
+  setIsOpen: (value: MenuState) => void
+}
+
+export const Child = {{open: MenuState, setIsOpen: MenuState}} => {
+  return(
+    ...
+  )
+}
 ```
