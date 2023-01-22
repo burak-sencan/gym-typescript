@@ -40,7 +40,7 @@ function Home({ setSelectedPage }: Props) {
               visible: { opacity: 1, x: 0 },
             }}>
             <div className='relative'>
-              <div className='before:absolute before:-top-20 before:-left-20  before:z-[-1] before:content-evolvetext'>
+              <div className='before:absolute before:-top-20 before:-left-20  before:z-[-1] before:hidden md:before:block before:content-evolvetext'>
                 <img src={HomePageText} alt='home-page-text' />
               </div>
             </div>
